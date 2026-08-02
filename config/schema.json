@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "computer": "string",
+  "awake": "boolean",
+  "battery": {
+    "level": "number",
+    "charging": "boolean"
+  },
+  "network": {
+    "wifi": "string"
+  },
+  "system": {
+    "darkMode": "boolean",
+    "displaySleeping": "boolean"
+  },
+  "updated": "ISO8601"
+}
