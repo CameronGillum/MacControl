@@ -19,9 +19,11 @@ No external APIs.
 Everything runs locally and syncs through Apple's ecosystem.
 
 ---
+
 ## Project Status
 
 See [PROJECT_STATUS.md](PROJECT_STATUS.md)
+
 ## Features
 
 ### Current
