@@ -80,7 +80,7 @@ Icons and screenshots
 
 ## Roadmap
 
-See ROADMAP.md
+See [ROADMAP.md](ROADMAP.md)
 
 ---
 
