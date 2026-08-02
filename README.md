@@ -87,4 +87,3 @@ See [ROADMAP.md](ROADMAP.md)
 ## License
 
 MIT# MacControl
-
