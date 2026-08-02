@@ -1,6 +1,0 @@
--- Engine.applescript
--- Entry point for the MacControl State Store.
---
--- This milestone intentionally contains no state I/O. Future versions will
--- expose read, write, and section-update operations while keeping modules
--- independent from the storage implementation.
