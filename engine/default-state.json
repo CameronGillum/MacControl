@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "updated": null,
+  "awake": {
+    "active": false,
+    "source": "Amphetamine"
+  },
+  "battery": {
+    "level": null,
+    "charging": null
+  },
+  "network": {
+    "wifi": null
+  },
+  "system": {
+    "darkMode": null,
+    "displaySleeping": null
+  }
+}

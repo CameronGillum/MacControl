@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MacControl State",
+  "description": "The version 1 state contract managed exclusively by the MacControl Engine.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "updated", "awake", "battery", "network", "system"],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "updated": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "awake": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["active", "source"],
+      "properties": {
+        "active": {"type": "boolean"},
+        "source": {"type": ["string", "null"]}
+      }
+    },
+    "battery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "charging"],
+      "properties": {
+        "level": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "charging": {"type": ["boolean", "null"]}
+      }
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["wifi"],
+      "properties": {
+        "wifi": {"type": ["string", "null"]}
+      }
+    },
+    "system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["darkMode", "displaySleeping"],
+      "properties": {
+        "darkMode": {"type": ["boolean", "null"]},
+        "displaySleeping": {"type": ["boolean", "null"]}
+      }
+    }
+  }
+}

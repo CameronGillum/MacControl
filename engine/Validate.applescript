@@ -1,0 +1,3 @@
+-- Validate.applescript
+-- Placeholder for validation against schema.json before a state document is
+-- accepted or exported by the Engine.
