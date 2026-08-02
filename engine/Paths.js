@@ -1,20 +1,26 @@
-// Paths.js
+/**
+ * MacControl
+ * Paths.js
+ *
+ * Canonical filesystem locations.
+ */
 
-ObjC.import('Foundation');
+ObjC.import("Foundation");
 
-const fm = $.NSFileManager.defaultManager;
+const fileManager = $.NSFileManager.defaultManager;
 
-const home = ObjC.unwrap(
-    fm.homeDirectoryForCurrentUser.path
+const HOME = ObjC.unwrap(
+    fileManager.homeDirectoryForCurrentUser.path
 );
 
-const applicationSupport =
-    `${home}/Library/Application Support/MacControl`;
+const APPLICATION_SUPPORT =
+    `${HOME}/Library/Application Support/MacControl`;
 
-const stateFile =
-    `${applicationSupport}/State.json`;
+const STATE_FILE =
+    `${APPLICATION_SUPPORT}/State.json`;
 
-module.exports = {
-    applicationSupport,
-    stateFile
-};
+const LOG_DIRECTORY =
+    `${APPLICATION_SUPPORT}/Logs`;
+
+const CACHE_DIRECTORY =
+    `${APPLICATION_SUPPORT}/Cache`;
