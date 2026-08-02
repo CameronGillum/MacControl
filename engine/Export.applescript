@@ -1,3 +1,0 @@
--- Export.applescript
--- Placeholder for exporting Engine-managed state to future synchronization
--- targets. Modules must not export or copy State.json directly.
