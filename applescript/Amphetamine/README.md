@@ -12,13 +12,26 @@ macOS to ask for permission to automate Amphetamine.
 
 | Script | Responsibility | Result |
 | --- | --- | --- |
-| `Toggle.applescript` | Toggle the current session. | Returns `started` or `stopped`. |
-| `Status.applescript` | Read session state. | Returns an AppleScript record; it makes no changes. |
-| `Session.applescript` | Start a known session configuration. | Starts an infinite session that prevents display sleep, then returns `started`. |
+| `Toggle.applescript` | Toggle the current session. | Returns a result record with a `started` or `stopped` action. |
+| `Status.applescript` | Read session state. | Returns a result record; it makes no changes. |
+| `Session.applescript` | Start a session. | Uses Amphetamine's configured defaults and returns a result record. |
 
 `Status.applescript` returns `secondsRemaining` in seconds. Amphetamine uses
 `0` for an infinite session, `-1` for a Trigger session, `-2` for an
 app- or date-based session, and `-3` when no session is active.
+
+Every script returns `{success:true, module:"Amphetamine", action:"..."}` on success. On failure, it instead returns `success:false` with an `error` message and numeric `code`; this includes missing Amphetamine and denied automation permissions. Timestamp support can be added later in the shared result contract.
+
+## Dependencies
+
+- macOS
+- Amphetamine
+- AppleScript
+
+## Tested with
+
+- Amphetamine 5.3.2
+- macOS 26.5.2
 
 ## Running scripts
 
@@ -30,6 +43,6 @@ osascript applescript/Amphetamine/Status.applescript
 osascript applescript/Amphetamine/Session.applescript
 ```
 
-`Toggle.applescript` uses the duration and display-sleep preferences already
-configured in Amphetamine. `Session.applescript` is intentionally explicit so
-future callers have a predictable way to start an infinite session.
+`Toggle.applescript` and `Session.applescript` both use the duration and
+display-sleep preferences configured in Amphetamine. The distinction is that
+Toggle changes state, while Session only starts a session.
